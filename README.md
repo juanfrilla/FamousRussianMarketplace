@@ -603,7 +603,16 @@ So we have the version, the incident and the token that we are going to send in 
 
 The VM generates multiple functions at runtime, and these also need to be traced. We can detect their execution in the browser trace, but unlike static handlers, we cannot print their arguments or return values. This is expected in a register‑based VM, where most operations happen inside registers and are not directly observable.
 
-The most important dynamically generated function (PC 23169) is:
+The most important one is built at PC 23169, where the trace catches the `Function(...)` constructor assembling it from a string body and returning the anonymous function:
+
+```
+L804| 23169 - FUNC_CALL Function(a, b, this.a(this.b(this.c(this.d(a,a-b,b*2,this.f[this.e(this.h(),b/2,a,this.g())])))))
+        → [Function: anonymous] { function anonymous(a,b) {
+L806|     this.a(this.b(this.c(this.d(a,a-b,b*2,this.f[this.e(this.h(),b/2,a,this.g())]))))
+        } }
+```
+
+Formatted, that function is:
 
 ```javascript
 function anonymous(a, b) {
@@ -1328,4 +1337,5 @@ Everything above is the analysis: how the VM is deobfuscated, how it is traced, 
 - **In Python it only worked with `httpcloak`.** The exact same payload sent through `tls-client` or `curl_cffi`, across every Chrome/Edge/Firefox impersonation profile they offer, was rejected. Success is unambiguous to check — the endpoint answers `{"ok": true}` and anything else is a failure — so this is a clean result: the browser-based transport worked, the two impersonation libraries did not.
 - **Rotate proxies, one attempt per IP.** A single malformed request flags the IP immediately, and after that even a correct payload is rejected from that address — which makes debugging on one IP misleading, since you end up blaming the payload for an IP problem. Get the payload right against a local decrypt round-trip first, then send each attempt from a fresh proxy.
 - **The browser identity has to agree with itself.** Inside the fingerprint, the user agent, the `hev` client-hint brands and `navigator.appVersion` all have to describe the same browser build; a payload that claims one version in the UA and another in the brands array is an inconsistency the server gets for free.
+- **A note on versions.** This write-up documents VM **v44** — the build in `antibot.js`. The site now serves `script_v47_3.js` (`"version": "47_3"`), and the mechanism is the same; only some fingerprint fields changed: a new top-level `browser_2` field, a different client-hint brand format (`Not;A=Brand` v8 instead of `Not-A.Brand` v24), and a bumped `challenge.version`. The structure of the reversing holds; the field list does not.
 
