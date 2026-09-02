@@ -35,7 +35,6 @@ js/
     webcracked.js             # input: the webcrack output
     finalOutput.js            # output: the fully deobfuscated script
     steps/                    # per-round, per-plugin intermediate output
-    debug_vm_runtime.js       # last snippet handed to node:vm (debugging aid)
 screenshots/                  # the DevTools captures referenced below
 ```
 
