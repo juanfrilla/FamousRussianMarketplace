@@ -400,7 +400,7 @@ Two caveats worth knowing:
 - Overriding `Date.now` does **not** affect `new Date().getTime()`, which still returns the real time. If the VM reads the date through the constructor you have to patch that too.
 - As the `performance` screenshot above shows, the VM does not only call `performance.now()`: it also reads the whole `performance.timing` object (`navigationStart`, `domLoading`, `responseEnd`, …) and `timeOrigin`. Those are not frozen by the patch above, and they are exactly the fields we will have to forge later in [Fingerprint reconstruction](#fingerprint-reconstruction).
 
-**Important:** remember to remove these patches at the end, as the real values (actual time, true randomness, and performance measurements) are required for the fingerprint/encryption to be valid.
+**Important:** remember to remove these patches when you try to decrypt the fingerprint, as the real values (actual time, true randomness, and performance measurements) are required for the fingerprint/encryption to be valid.
 
 ### Instrumenting the handlers
 
