@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <link rel="stylesheet"
+        href="https://cdn2.FaMouSRuSSiaNMaRKeTPLaCe.CoM/s3/abt-challenge/incidents/styles_v2/common.css">
+    <title>Antibot Challenge Page</title>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            font-family: arial, sans-serif;
+            font-size: 16px
+        }
+
+        body {
+            margin: 0
+        }
+
+        .container {
+            display: flex;
+            flex-flow: column;
+            max-width: 1140px;
+            min-height: 100vh;
+            overflow: auto;
+            padding: 2rem
+        }
+
+        .container,
+        .content {
+            margin: auto
+        }
+
+        .challenge-data {
+            visibility: hidden
+        }
+
+        .details {
+            font-size: .85rem;
+            margin-top: auto;
+            text-align: center
+        }
+
+        .details-text {
+            word-break: break-all
+        }
+
+        .bold {
+            font-weight: 700
+        }
+
+        .message,
+        .variant {
+            align-items: center;
+            display: flex;
+            flex-flow: column;
+            text-align: center
+        }
+
+        .variant+.variant {
+            margin-top: 3rem
+        }
+
+        .h2 {
+            font-size: 1.6rem;
+            margin-bottom: .75rem;
+            margin-top: unset
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: .25rem
+        }
+
+        .run-status-box {
+            align-items: center;
+            display: flex;
+            height: 5rem;
+            justify-content: center
+        }
+
+        .loader {
+            height: 5rem;
+            position: relative;
+            width: 5rem
+        }
+
+        .loader-hidden {
+            visibility: hidden
+        }
+
+        .loader-ellipse {
+            animation-timing-function: cubic-bezier(0, 1, 1, 0);
+            background-color: currentColor;
+            border-radius: 50%;
+            height: .85rem;
+            position: absolute;
+            top: 2rem;
+            width: .85rem
+        }
+
+        .loader-ellipse:first-child {
+            animation: ellipse-1 .6s infinite;
+            left: .5rem
+        }
+
+        .loader-ellipse:nth-child(2) {
+            animation: ellipse-2 .6s infinite;
+            left: .5rem
+        }
+
+        .loader-ellipse:nth-child(3) {
+            animation: ellipse-2 .6s infinite;
+            left: 2rem
+        }
+
+        .loader-ellipse:nth-child(4) {
+            animation: ellipse-3 .6s infinite;
+            left: 3.5rem
+        }
+
+        @keyframes ellipse-1 {
+            0% {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        @keyframes ellipse-2 {
+            0% {
+                transform: translate(0)
+            }
+
+            to {
+                transform: translate(1.5rem)
+            }
+        }
+
+        @keyframes ellipse-3 {
+            0% {
+                transform: scale(1)
+            }
+
+            to {
+                transform: scale(0)
+            }
+        }
+
+        .recommendations {
+            margin: 8px 0;
+            padding-left: 24px
+        }
+    </style>
+</head>
+
+<body>
+    <noscript>
+        <div class="container">
+            <div class="message">
+                <div class="variant">
+                    <h2 class="h2">Пожалуйста, включите JavaScript для продолжения</h2>
+                    <span class="subtitle">Нам нужно убедиться, что вы не робот.</span>
+                </div>
+                <div class="variant" lang="en">
+                    <h2 class="h2">Please, enable JavaScript to continue</h2>
+                    <span class="subtitle">We need to make sure that you are not a robot.</span>
+                </div>
+            </div>
+            <div class="details">
+                <span class="details-text">
+                    <b>ID:</b>
+                    fab_chlg_20260623075859_01KVSQTQA3ZEJ8GF00XZZSVVDD
+                </span>
+                ,
+
+                <span class="details-text">
+                    <b>IP:</b>
+                    2.137.234.134
+                </span>
+                ,
+                <span class="details-text">Tuesday, 23-Jun-2026 07:58:59 UTC</span>
+            </div>
+        </div>
+    </noscript>
+    <div class="container" id="container">
+        <div class="content" id="content">
+            <input id="challenge" type="hidden"
+                value="y4tNDQsZmFiX2NobGdfMjAyNjA2MjMwNzU4NTlfMDFLVlNRVFFBM1pFSjhHRjAwWFpaU1ZWREQsc2M6dnFYdlpMWndqWTdBNXh0MzFreWdLUTp6ZnhLMEJyaWV1R1NSVlFtUl8tODBHaGgtcU9yX0toQVo1NXBvMEtxaE03S3hDdFV4ckEybVlnYzhKLVM3dThBd3Nfak1wMVFISEIwQ3NSSmxnQ0x1TFlUUjl2LVpnMmJuaHFfMWJjZ3R3aWNZeGZsWjBkZXFPTnpIejdPSEhyWmpDaWVFaHVXcll4d3JkMl9zbHgyUWtTWUNmRy1FVzB0VFlqejdPNlh2WnMtbUJONTNyU2VudHhBTTZJc0FMZk9QN3hmd01wZEVaZ1B6dnBBVXZQTVJLNTJydEhXRzFjbnp0cGNhUlNXcGotbTVWdnZSNmZ3Um1KdjZ0cTRVVDllTjVBbU83ZUdzR0lzalBOZU9mY1JLU05jSjFxRC1UTk44OFlaSlRxV2VYMUhDb1FmUlRpYnVxc2JCQ08xeDJzR3lEVTZZTkQ0SjBGTTktSUMtTkhfblRGRnhHdVlnaG9HdVZiU0Q4MlZIaFNRSnNHWGI2RHM4cWFRanlLOXphaEFxNkxUTFBxSGVEQVI0Z2JwTzRFeUF2SkZPbE1GU2RxRUVzNnF5SGpYZzdSbElZZE5lQ1RsNXBUdDBjbFI3SmpJajdwdDJMODQ0Q3g0NXFaYktoQjEtZGRWd3BieFZoU2RkWG11eTUyVWNZX1RiRjQ0a0d6TGNISTNpVXZ2TU95QjhNVnJkX2JjcWxWa3BiWTFrRWF6SFVaWmdkU2tFMV93WW9zUVVneTdUc3RBbzhSWnlPWFZ4YUFXanVPekUtSHZQNEx0dGd5QWtSblR4RUdRYUxQTjFQMy0zMEdtT0lvWXh2bWUtUTNiRENDTWdsZWdCaWVlZ3dmaTJWN25Pd2hzUmVVTm5lRGpEbUtlX0N0aXQ4SFlYZUtkemd6c2owRDlTOTJINDU5NFZXZVJ5QjZCS3dyeTRjeUJ6ZjVfLTFLY3o2QXUtZ0xfVzVIV21LVTRVMXFQZkRpNFZTSXBBQ285TFNiOTRLWnFoSE93QmNUYzVGeE9BTGFXalRvYzhUaWY1ejI1bWZEeV9PSW5YZWtjN0QtYTN4U3AydUcwMHZaUWJkV3YzSXJWOEZoS1RLNjZKaFZHYnBMcXpyQTNfaEs4UmxNRzFoQUgxSGVSQ3lnQmNoazE5OEJ1cVpSalBmc0lHTjJaY2RIV0dzaHFJQUxXelF1d3hMcHFwSUg4U1VtN2g2U043RG5pTmE1UzZUWGE5WGxhLS1Nb0xuWktuWnUtM3ZUS3B3c0xQYXBBQk5XbGthVGNUdzZhYlhTT0RxN3hxZUVveUFPMXo5RTNUc21uVnV1ZlhRRUZHZGhLNXJLRl95TlNoRnVNQVFDWlh5VzRLLUhCVzhFT3llZE5BTlQ4NDRfQ3lRN0VLU2YwVDU1NVl5SFVPWDk3SEtUUXR1d1dmRzNiWWhQZ0JnWnptb195M1ZSUVpZamJTdUx1Zjhsd09GbTNibnZra0lKRGJlTDlEb1ZBVlpwREwtdzItVDNHZ0ZMWC1DWTVFbXdfUi1qRDVseUJocHNZV2hVeW9ULVAxT3RPZUhXdG1YSTVuNUZ0Wlk5SW5nbzlmNkUwQTdYTk52MHFvem13QXVTV1hORmVXVmprOWR1UnZiUGxUdlY1b2d3Rl9iRy1ZSDV6OUVZYi1nblRfSno3Q2o4LW1tdmVFWXgyNENRVENrbHQ2N083Q1htbk5DMFp3ajB5R2daYUNwVU1NcFlkcHMtaWpmeFE4S2lTeGZnal81QjBVaGxDdTd6Z3A0S19iNFBneTZVYmRFcElSeGNreGo4TVZKODI0MWVCb0I2R2ZVTGZFNEF2U00wUThNY1FhT3NPQ1BIZ0xWQkZiamZ3OWNyekd2b2VUVnFpNjZxVi1rUGFIRnAwU3lJRWN2SDU0TVZyWGJRaFpOSlI3ZFpyY3lBekJwdXUtLVFWNTFuLVdyV19TWmRaa2J2bW84MUlnSUFxVTE1Vlg1WDVwOTl0ZDBZc3BEOWRXR3Z4LWNESm9EOUhyX2lXRUJHRkhqQXZHSGN1eFJ2TU5oUDdpN3JkdE9yMjh3RlBZaDhVS29LbGc3UVpoMWoyTnlTa011ZFd5cDFUc0wtbW1EXzVCcGxZekwycC16TUhVWGZVSW95a2ZDd3NKampIeG15cnZraEkzUjc4MndFd21lc3NMYlR2X1d3OEZPOHFubzF5WVRmZ0Etc1k4R0cxYWFpclNNXzBXakhLNWM0RG5mcVp0YlRseFNrZWQwVVNqZHJHSzNaV2pGeml6YVF5aVh5dGwwUGEtWlM4Q2hMdVhzOWczLUhOcVhuQnY4TkRkZ2lIX1BTbUZkd3JVZXcyN1NieFZSZVZNWVdwWS0yS1dBaVlCUmRtVm9HV1dkVTB1RHliRDRaOF9IRmpuUU9xSU5LV0pSNHVMN2RyMnFNbEpZZk9QWnFJcnl2U29FY0F0dG5VQkZTNURXbnBaSFZlbHY1cDhFQUJEQWp4bzllcTZFWEx6UjZHR2VJR3Q1dFBMUUV0LS1wWUVnWEdwWTlqbTVTdlZrQzBTRUxVMUNCNG54VE1hNFNWMUJIOFdpbnd3VXJQNU41T3F1enNpekdrYUhKR1VvYUdPZjRRbDJ2MjRGVFdYSHJzQ0FCb1gyMHdwa1ZPR2RTbkViSWVGem02RGU1OE52dVNiUU91V1Ryek1pTjRod3FWN3BNQlhSWHFLdWVDdUdJbUVhMmdJVVMtODNrOFhMcmt4UzFxRVQtS1lzVkdHQXhyWVpYQlNPREZjMFllbURLeG9XdmtDLVJuTlcxQUNyNzlUQVdMcURsX3BoQnp1MklOcE1pYS1zZFRWZVJEdUNNUkdVX01lU0RaV1QxU0ZST0JyYS1Nakh2aGEtWDUzVWtLU2E4MGZiWnE0elpKS3lSdUtxRGNkMmJ6a2lGN2pJME81ZjdreTNTLU5NM0kxZFd5a081T3JRdi1FcEtSVy1wTEFCNzZpT1hZR2lsVzdKY0NUSkpNczU0Vk1zcWFscVVOOHc2clgzcVBxcWxBbEhOMU9seWVkMGpvTE9kelh1anBtWjMtTnJYRkw5VndoOUV0VC1rLW5WMWdRcUlnalA1T2RRdExOXzlySWg0NGh4amxNRms3cjkyc3Y2SjdyZ1lPVVRaNDZDbGloY1dBTUh1U0tRLUdMakF6a2tsNFBPXzluNmJzVHRYc21VU0pUU0JGTlRlbThmX0E3cTlXekxmZnBLdy1xMjVDZllpZlpVMEROZ21CczZZUHRaMFdpOXlyVWgwMTR4MXU0ZDN6cHRiTUhTekdkanRMWVJZOFhDdVdwMHFNb2o4ajkxQVd4TmZSTHBvVmpQVFg2ZklnTEdwMGlUYTZaTnlnWnhNaUpROS1vdVlPdnB5NkdncmNxcEI5VEpFT1E1ZjhaTFhWMlc2TnMyY3lkV3JaWHhQaUFyTkRXNkt1anJhRXB1TjFEeElzRFVfRDdNOUZEM09hR25jeFotdE43OWhxblprT19TdWJiZjgxR1BZUWo0SE5Ca2lCcDNUbUxNTWh5ZlhVbDdtUjZiUzVJNThOa0lxaUMwZGdmcW1JVXNaUTJhQzY1ckxNS3NGSEExWEZHZlpmeF96U2ZpT3hPVW5QXzk0OWVpSEZoeWE4MnpTaEhXWC1OTzB5QVpZT0l3Y0tyY0hJdjlNNDJLdEpNYzV3Q01MUEc1NTBocURiMEY4b2VlNldpc1N2X0RycGNOc2hJQTk5WkRYTzdwbGlmWUtiaFE5dEdsODVQUDFwb0oxc0pUOWFxbXMtdUxDcWlGZTJqdjQ0UzVDZzNZM1VpTnc1dEw5ZncyMGYzWVUzajAxMUZST1BxWUpyZGlJSTk2c1JEZmd6a05mMmhwRHN4RVFsY2VtZXY3SUh2TzVZVXRzYlRyallsZFhwWHVjRlJnLWVSWXdSSm1PZXQwTUt0eDFRczM1b2RvZjZpTDFvT05OTTI3NGVyUEprUGVNSVNOaXdqVDF0aFFDVlU0dXRhaFZjeWNOOHhlMUw3V040RmZCZVJBTlZxZG42akZrdEk3VTJlMEpwblRWZDZaM1pnSWlyQlNYakZDcUhQS2FfU1psN1FHMHVIZ0hhY0p0bEo2ZG05dWlRRnExZ0MzdXMwS1paRHpZMDFBYUhQY0J3WXZaUjM0bjlWSGQ3R3NSa1d5ckFmblY2RTRHUzhXMF9vVVFmZjdkbVFZSWt3VmVrMWxpcEY1LWxESGlaWDB0c0ZyX0VMS0dGMURtRklSQmdhRHkwY1dkVXBPNnVsSENidkxJUmxTMzFnRDFrbmVtSUU0Q3lab2YwMWlDYklOdTdLRVU5elZHb0RDZHlvTzZEVkRPZE5SUUc2NW1lU09nMFhtNkQ0SW9VMXRjRzBwSzk4RVFrNmk0eWJfZVVIWUJVNEFodV9MbVdQZWZMVzVNSnhxdDNHNjRNOTNwcldvY0tpSGkyRHZqaWxVcC04QjRWYWZodS1fb2RIMmxGTU1sY2xxbEUycXJuQ0lTZVNLWDlmUjNvX0Z4N1NuR1ZESDVTemRTS2FJd0E4cWlzcFBPWVhWTnR4LVpKcGFReW8zNkt2UTBEaDlYRjl6czZNWVNfaUV6WGRCN3ZWcWN0YWFrcFVtUlZsalNDWWVqQTFIcjRvVk5sNmZERGYyY2pBaXUyblIyQ0dicjNBUlFLeDhZQkFXT0t6WVJKNUJGREVLRGMwS1ZISGxNT2pLVnlaWi1LdXI4ZDR0Mmo5aXlOS0lNX05iUXI3WllMc0FWTTUzQUhDTmJNWUJLTU92QjZSMFZ5QjR5d05UcEo0SDhibk0wdHJpRTB0djd1UVpyXzVTUzYxUjdPVGdITVFjeTJTMUhIeHBWVm5qRXl0b2VMU2hnd1FuWmxQZDR1OWRxcjZ4M3d3cnFZTDFNb0h3alZpODcyeXlzbmlrX2Fydk1TaTVFOmV5SndlaUk2SWpFMklpd2ljM1Z3Y0c5eWRGOWtiMjFoYVc0aU9pSjNkM2N1YjNwdmJpNXlkU0o5">
+            >
+            <input id="incident" type="hidden" value="fab_chlg_20260623075859_01KVSQTQA3ZEJ8GF00XZZSVVDD">
+            <input id="complaints-token" type="hidden"
+                value="1.XaNLGPtUx79sW2pGHaX2A8LFYjnS_wvjs1dBvUockqILj2v9yiwR-dBhHmVkjp97e0c2D3LytXYsVPZmrvIsk4LwgsR6KmlL-LNzm1NwJYYyknccf9NHC45DAucGorTg8SCqUAaeCB_KIJfebDkwSP-9aOwDro3uIBgGAZXFNfzaBmZJmW5B5TVh4hHVvqIjxWkyYGI05lcWWeDcAOr6ZrWtPQMAvMQ2zUM7jUhy41UTbb_twXXtGBisRMjSKafwG1b6zyx4pF_eFz-eJGw3f_G6iGYoFOh1n19rJvDFr1wDNbDi9SPD__BjfbinYVBShXi5ilEqs6ZME68bRd9c80pjPeU">
+            <input id="challenge-ip" type="hidden" value="2.137.234.134">
+            <input id="challenge-date" type="hidden" value="Tuesday, 23-Jun-2026 07:58:59 UTC">
+            <input id="complain-new-window" type="hidden" value="">
+            <div class="message">
+                <div class="loader">
+                    <div class="loader-ellipse"></div>
+                    <div class="loader-ellipse"></div>
+                    <div class="loader-ellipse"></div>
+                    <div class="loader-ellipse"></div>
+                </div>
+            </div>
+            <div class="challenge-data">
+                <div class="details">
+                    <span class="details-text">fab_chlg_20260623075859_01KVSQTQA3ZEJ8GF00XZZSVVDD</span>
+                </div>
+                <div class="run-status-box">
+                    <span id="run-status"></span>
+                </div>
+            </div>
+            <div class="challenge-information" hidden="hidden">
+                <div>Попробуйте:</div>
+                <ul class="recommendations">
+                    <li>обновить страницу</li>
+                    <li>отключить расширения и вновь обновить страницу</li>
+                    <li>воспользоваться другим браузером или мобильным приложением</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        performance.mark('jobStart', {
+            startTime: Date.now()
+        })
+        function showInformation() {
+            const informationElement = document.querySelector('.challenge-information');
+            if (informationElement) {
+                informationElement.removeAttribute("hidden");
+            }
+        }
+    </script>
+    <script src="antibot.js"></script>
+
+</body>
+
+</html>
