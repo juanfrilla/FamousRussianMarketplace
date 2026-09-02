@@ -331,7 +331,7 @@ After removing the previous traps, the technique I used to reverse this VM was t
 
 In practice, this means adding logging inside the handlers to expose relevant information: function calls (including certain external functions the VM relies on), object property reads (object writes are usually unnecessary), and arithmetic/bitwise operations. A handler, in this context, is the function that executes a specific operation and is directly tied to an opcode.
 
-At this volume, calling `console.log` on every handler is too slow — the DevTools console renders each line as it arrives. So instead of logging directly, the handlers push to an array:
+At this volume, calling `console.log` on every handler is too slow — the DevTools console renders each line as it arrives. So instead of logging directly, the handlers push to an array, using the `_log()` method:
 
 ```javascript
 var logs = [];
@@ -347,8 +347,6 @@ for (var log of logs) {
   console.log(log);
 }
 ```
-
-The handler snippets below are written with `console.log` for readability, but in the instrumented file each of those is a `_log` call into that buffer.
 
 The advantage of this approach is that I don't even need to sandbox the VM in a local Node environment; I can run it directly in the browser via the `index.html` file, which in turn loads `antibot.js`, the file containing the VM's logic.
 
