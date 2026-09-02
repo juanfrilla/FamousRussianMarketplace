@@ -331,12 +331,20 @@ After removing the previous traps, the technique I used to reverse this VM was t
 
 In practice, this means adding logging inside the handlers to expose relevant information: function calls (including certain external functions the VM relies on), object property reads (object writes are usually unnecessary), and arithmetic/bitwise operations. A handler, in this context, is the function that executes a specific operation and is directly tied to an opcode.
 
-At this volume, calling `console.log` on every handler is too slow — the DevTools console renders each line as it arrives. So instead of logging directly, the handlers push to an array and it gets dumped once, at the end:
+At this volume, calling `console.log` on every handler is too slow — the DevTools console renders each line as it arrives. So instead of logging directly, the handlers push to an array:
 
 ```javascript
 var logs = [];
 function _log(val) {
   logs.push(val);
+}
+```
+
+And it gets dumped once, at the end:
+
+```javascript
+for (var log of logs) {
+  console.log(log);
 }
 ```
 
