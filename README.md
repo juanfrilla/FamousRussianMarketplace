@@ -2,7 +2,7 @@
 
 This repository documents my full thought process while reversing the JavaScript Virtual Machine used by a major Russian e‑commerce platform. The VM is responsible for generating two critical parameters included in the client payload: `fp` and `token`. The write-up walks through the deobfuscation steps, the VM analysis, the anti-debugging traps, the AST work, and ends by recovering a captured fingerprint in clear text.
 
-It stops there on purpose. Turning that into a working solver is left as an exercise — see [Solver hints](#solver-hints).
+Turning this into a working solver is left as an exercise — see [Solver hints](#solver-hints).
 
 **Disclaimer:** This project is for educational and research purposes only. The target is anonymized on purpose. Use of this material must comply with the target website's Terms of Service and applicable data privacy laws.
 
