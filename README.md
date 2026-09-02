@@ -46,18 +46,19 @@ Everything in this write-up runs in the browser. The trace excerpts quoted throu
 - **A Chromium-based browser.** The whole reversing session happens in DevTools against `js/index.html`; there is no need to sandbox the VM in Node.
 
 ## Initial setup
-
-1. Visit the FamousRussianMarketplace website and intercept the requests using a proxy tool such as Burp Suite.
-2. Locate the initial HTML file that contains the antibot logic. The JavaScript antibot code is embedded inside the last `<script></script>` tags.
-3. Extract the HTML and the antibot script, saving them separately as `index.html` and `antibot.js`.
-4. In `index.html`, replace the last embedded `<script>` with a tag that loads the extracted antibot code like this: `<script src="antibot.js"></script>`
+How I took this `antibot.js` code:
+1. I Visited the FamousRussianMarketplace website and intercepted the requests using a proxy tool such as Burp Suite.
+2. I located the initial HTML file that contains the antibot logic. The JavaScript antibot code is embedded inside the last `<script></script>` tags.
+3. I extracted the HTML and the antibot script, saving them separately as `index.html` and `antibot.js`.
+(Now the js code it's served in `script_v47_3.js`)
+4. In `index.html`, I replaced the last embedded `<script>` with a tag that loads the extracted antibot code like this: `<script src="antibot.js"></script>`
 5. Deobfuscate the original JavaScript using WebCrack:
 
    ```bash
    webcrack original.js -o deobf
    ```
 
-6. The deobfuscated script is saved in `deobf/deobfuscated.js`.
+6. The deobfuscated script was saved in `deobf/deobfuscated.js`.
 
 Note: the [js/antibot.js](js/antibot.js) file shown here is the final and reduced version obtained after applying the AST‑based deobfuscation pipeline; the comments can be stripped as well.
 
